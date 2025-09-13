@@ -182,6 +182,9 @@ This function always returns exactly one of its two value parameters. There's no
 - **Easier debugging** - no hidden state changes in conditionals
 - **Better composability** - expressions nest cleanly without side effects
 
+*Important caveat:* Not all if/elif/else implementations in other languages require an else clause or guarantee the same return type across branches. In languages without exhaustivity checking or sum type support, there's minimal functional difference between nested if-then-else expressions and attribute set lookups - only syntax differs.
+Nix's strength lies in its mandatory else clause and type consistency requirements. These constraints eliminate undefined states that plague optional-else languages.
+
 When transitioning from statement-based languages, embrace the constraint. The "limitation" of always returning values becomes a strength that prevents entire categories of bugs.
 
 The next time you reach for elseif, remember: you're thinking in statements. Switch to expressions, and discover patterns that are often cleaner and more reliable than their imperative counterparts.
