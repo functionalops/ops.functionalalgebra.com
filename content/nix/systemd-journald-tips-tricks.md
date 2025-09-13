@@ -2,8 +2,8 @@
 title: "Tips & Tricks for systemd and journald on NixOS"
 summary: "Essential commands, configuration patterns, and logging strategies for managing systemd services and journald on NixOS systems"
 tags: ["nixos", "systemd", "journald", "linux", "system-administration"]
-updated: "2024"
-original_date: "14 Jun 2016"
+date: "2016-06-14"
+mod: "2025-09-13"
 ---
 
 ## Updates Since 2016
