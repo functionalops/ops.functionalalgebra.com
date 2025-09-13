@@ -6,6 +6,35 @@ date: "2018-01-27"
 mod: "2025-09-13"
 ---
 
+## Updates Since 2016
+
+Configuration Method Changes:
+- `packageOverrides` deprecated in favor of overlays (still works but generates warnings)
+- User config location changed from `~/.nixpkgs/config.nix` to `~/.config/nixpkgs/config.nix`
+- Home Manager integration now preferred for user-level package management
+
+Modern Nix Ecosystem:
+- Flakes widely adopted for reproducible configurations
+- `nix-env` discouraged in favor of declarative approaches
+- New Nix commands available (`nix profile`, `nix shell`)
+
+Technical Updates:
+- `aspellWithDicts` function remains stable and unchanged
+- Dictionary packaging and availability unchanged
+- Environment variable handling (`ASPELL_CONF`) remains the same
+
+Recommended Modern Approach:
+- Use Home Manager for user-level package management
+- Consider flakes for project-specific environments
+- Use overlays instead of packageOverrides
+- Replace `nix-env` with declarative configuration
+
+This setup ensures reliable spell checking across your development tools while maintaining the reproducibility that makes Nix powerful for development environments.
+
+---
+
+The following is the original post content with some updates to the writing style to (hopefully) make it easier to read:
+
 Need spell checking in your development environment? Here's how to configure `aspell` dictionaries through Nix for tools like flyspell in Emacs or Spacemacs.
 
 ## Configuration Approaches
