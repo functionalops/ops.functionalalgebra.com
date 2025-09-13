@@ -17,37 +17,12 @@ Ecosystem Changes:
 - Better IDE support and tooling available
 
 Code Updates: All examples work with current Nix versions. Consider checking nixpkgs lib documentation for latest helper functions when implementing the patterns shown.
----
-
-## Updates Since 2018
-
-Core Functionality Unchanged:
-- `builtins.functionArgs` remains stable and unchanged
-- `callPackage` mechanism works identically
-- `builtins.intersectAttrs` usage patterns unchanged
-
-Modern Nix Ecosystem:
-- Flakes widely adopted for reproducible builds and dependency management
-- New Nix commands (nix repl, nix shell, nix develop) supplement traditional tools
-- `nix repl '<nixpkgs>'` syntax still works but nix repl with flakes more common
-
-Development Environment Changes:
-- Flakes provide better dependency pinning and reproducibility
-- Development shells (`nix develop`) often preferred over `nix-shell`
-- Package inspection works the same in flakes context
-
-Documentation Improvements:
-- Official Nix documentation significantly expanded
-- More examples and tutorials available for `callPackage` patterns
-- Better tooling support for function introspection
-
-Next time you need to understand what arguments a Nix function expects, reach for `builtins.functionArgs`. This simple builtin unlocks powerful metaprogramming capabilities that make `nixpkgs` both flexible and maintainable.
 
 ---
 
 The following is the original post content with some updates to the writing style to (hopefully) make it easier to read:
 
-A teammate recently asked me: "I understand how to use if-else in Nix, but how do I create if-elseif-else logic?" This question reveals a common misunderstanding that trips up developers transitioning from imperative languages to expression-based systems like Nix.
+A teammate recently asked me: _"I understand how to use if-else in Nix, but how do I create if-elseif-else logic?"_ This question reveals a common misunderstanding that trips up developers transitioning from imperative languages to expression-based systems like Nix.
 
 The answer lies in understanding a fundamental difference: **Nix uses expressions, not statements.**
 
