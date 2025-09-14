@@ -160,7 +160,10 @@ This function always returns exactly one of its two value parameters. There's no
 - **Better composability** - expressions nest cleanly without side effects
 
 *Important caveat:* Not all if/elif/else implementations in other languages require an else clause or guarantee the same return type across branches. In languages without exhaustivity checking or sum type support, there's minimal functional difference between nested if-then-else expressions and attribute set lookups - only syntax differs.
-Nix's strength lies in its mandatory else clause and type consistency requirements. These constraints eliminate undefined states that plague optional-else languages.
+
+Nix's strength lies in its **mandatory else clause** and **expression semantics**. While Nix itself is dynamically typed, the expression-based design enforces that both branches must return *some* value. In statically typed expression languages like Dhall or Nickel, this constraint goes further - both branches must return values of the same type, providing compile-time guarantees about program behavior.
+
+This expression-based approach eliminates undefined states that plague optional-else languages, whether through Nix's runtime value requirement or through static type checking in more strongly typed functional languages.
 
 When transitioning from statement-based languages, embrace the constraint. The "limitation" of always returning values becomes a strength that prevents entire categories of bugs.
 
