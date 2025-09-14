@@ -104,7 +104,6 @@ series = "series"
 tag = "tags"
 author = "authors"
 
-
 [[params.social]]
 name = "Github"
 icon = "fa-brands fa-github fa-2x"
@@ -112,10 +111,16 @@ weight = 1
 url = "https://github.com/mbbx6spp/"
 
 [[params.social]]
-name = "Twitter"
-icon = "fa-brands fa-x-twitter fa-2x"
+name = "Mastodon"
+icon = "fa-brands fa-mastodon fa-2x"
 weight = 3
-url = "https://twitter.com/SusanPotter"
+url = "https://mastodon.social/@SusanPotter"
+
+[[params.social]]
+name = "BlueSky"
+icon = "fa-brands fa-bluesky fa-2x"
+weight = 3
+url = "https://bsky.app/profile/susanpotter.net"
 
 [[params.social]]
 name = "LinkedIn"
@@ -127,6 +132,6 @@ url = "https://www.linkedin.com/in/susanpotter/"
 name = "RSS"
 icon = "fa-solid fa-rss fa-2x"
 weight = 6
-url = "https://ops.functionalalgebra.com/index.xml"
+url = "/index.xml"
 rel = "alternate"
 type = "application/rss+xml"

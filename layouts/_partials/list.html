@@ -1,0 +1,66 @@
+<style>
+.items .date {
+  display: inline-block;
+  margin-top: 0.125rem;
+  margin-bottom: 0;
+  font-size: 1rem;        /* slightly larger but still small */
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;        /* keep date on one line */
+}
+
+.items .title h3 {
+  margin: 0 0 0.25rem 0;      /* reset default margins, keep bottom spacing */
+  font-size: 1.95rem;         /* reasonable heading size */
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.items .description {
+  margin: 0 0 1rem 0;
+  padding: 0 0 1rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 1.6rem;            /* normal body size */
+  line-height: 1.6;
+  max-width: 60ch;            /* improve readability */
+  word-break: break-word;
+}
+
+/* Optional container spacing instead of per-element padding */
+.items > li > div {
+  padding: 0.5rem 0;
+}
+
+/* Accessibility: respect reduced motion if you add transitions later */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+</style>
+
+<section class="container list">
+  <header>
+    <h1 class="title">
+      <a class="title-link" href="{{ .Permalink | safeURL }}">
+        {{- if eq .Kind "term" -}}
+          {{- i18n .Data.Plural 1 | title -}}
+          {{- print ": " -}}
+        {{- end -}}
+        {{- i18n (lower .Title) | default .Title | title -}}
+      </a>
+    </h1>
+  </header>
+  {{ .Content }}
+  <ul class="items">
+    {{ range .Paginator.Pages }}
+    <li>
+      <div>
+        <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}"><h3>{{ .Title }}</h3></a>
+        {{ with .Params.summary }}<p class="description">{{ . | markdownify }}</p>{{ end }}
+      </div>
+    </li>
+    {{ end }}
+  </ul>
+  {{ partial "pagination.html" . }}
+</section>
