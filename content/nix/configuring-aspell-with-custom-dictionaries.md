@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2018/01/27/aspell-with-dicts/
 title: "Configuring Aspell with Custom Dictionaries in Nix"
 summary: "Set up aspell with custom dictionaries for development environments using Nix user-level configuration and aspellWithDicts function."
 tags: ["nix", "aspell", "development-environment", "spellcheck", "emacs"]

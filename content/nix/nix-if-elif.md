@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2016/06/12/if-then-else/
 title: "Understanding Nix if-then-else Expressions, Why There's No elseif and How to Work Around It"
 summary: "Learn why Nix uses if-then-else expressions instead of if-elseif-else statements, and discover practical patterns for handling multiple conditions in expression-based languages."
 tags: ["nix", "expressions", "conditionals"]

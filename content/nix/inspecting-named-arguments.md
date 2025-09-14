@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2018/04/18/inspecting-nix-lambda-named-arguments/
 title: "Inspecting Nix Lambda Function Arguments"
 summary: "Learn how to discover what arguments a Nix function expects using builtins.functionArgs and understand how callPackage works under the hood."
 tags: ["nix", "nixpkgs"]
